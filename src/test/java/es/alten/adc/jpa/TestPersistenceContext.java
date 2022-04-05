@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,5 +25,10 @@ public class TestPersistenceContext {
 	public void givenEntityManagerFactory_whenCreateEntityManager_thenNotNull() {
 		
 		assertNotNull("entityManager is null", entityManager);
+	}
+	
+	@After
+	public void tearDown() {
+		entityManager.close();
 	}
 }
