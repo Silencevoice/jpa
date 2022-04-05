@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
@@ -20,6 +21,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import es.alten.adc.jpa.lifecycle.AuditTrailListener;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,6 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @Data
 @Entity(name = "student")
 @Table(name = "STUDENT")
+@EntityListeners(AuditTrailListener.class)
 public class Student {
 	
 	@Id
