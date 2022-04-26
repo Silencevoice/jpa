@@ -7,6 +7,7 @@
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>es.alten.adc.jpa.entity.Student</class>
+		<class>es.alten.adc.jpa.entity.Company</class>
 		<properties>
 			<!-- ~ = relative to current user home directory -->
 			<property name="javax.persistence.jdbc.url"
