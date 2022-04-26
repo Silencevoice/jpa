@@ -21,11 +21,19 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>5.6.7.Final</version>
 		</dependency>
-		<!-- JDBC Driver, use in memory DB -->
+		<!-- JDBC Driver for prod code -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.3.4</version>
+		</dependency>
+
+		<!-- JDBC Driver, use in memory DB for testing-->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>2.1.210</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- SLF4J -->
 		<dependency>
