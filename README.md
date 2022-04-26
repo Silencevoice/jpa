@@ -3,7 +3,10 @@ JPA project for learning
 
 Initial branch: initial_setup
 
-# Branches
-1. 01_entities
-2. 02_lifecycle
-3. 03_embedded
+# Branches and links
+|Branch|Link|
+| --- | --- |
+| 01_entities | https://www.baeldung.com/jpa-entities|
+| 02_lifecycle | https://www.baeldung.com/jpa-entity-lifecycle-events |
+| 03_embedded | https://www.baeldung.com/jpa-embedded-embeddable |
+| 04_attribute_converters | https://www.baeldung.com/jpa-attribute-converters |
