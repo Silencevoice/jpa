@@ -11,3 +11,4 @@ Initial branch: initial_setup
 | 03_embedded | https://www.baeldung.com/jpa-embedded-embeddable |
 | 04_attribute_converters | https://www.baeldung.com/jpa-attribute-converters |
 | 05_unique_constraints | https://www.baeldung.com/jpa-unique-constraints |
+| 06_one_to_one_relationships | https://www.baeldung.com/jpa-one-to-one |
