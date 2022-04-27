@@ -9,6 +9,10 @@
 		<class>es.alten.adc.jpa.entity.Student</class>
 		<class>es.alten.adc.jpa.entity.Company</class>
 		<class>es.alten.adc.jpa.entity.Person</class>
+		<class>es.alten.adc.jpa.entity.User</class>
+		<class>es.alten.adc.jpa.entity.Address</class>
+		<class>es.alten.adc.jpa.entity.Workstation</class>
+		<class>es.alten.adc.jpa.entity.UserDetails</class>
 		<properties>
 			<!-- ~ = relative to current user home directory -->
 			<property name="javax.persistence.jdbc.url"
