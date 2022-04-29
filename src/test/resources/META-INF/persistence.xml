@@ -13,6 +13,8 @@
 		<class>es.alten.adc.jpa.entity.Address</class>
 		<class>es.alten.adc.jpa.entity.Workstation</class>
 		<class>es.alten.adc.jpa.entity.UserDetails</class>
+		<class>es.alten.adc.jpa.entity.Cart</class>
+		<class>es.alten.adc.jpa.entity.Item</class>
 		<properties>
 			<!-- ~ = relative to current user home directory -->
 			<property name="javax.persistence.jdbc.url"
