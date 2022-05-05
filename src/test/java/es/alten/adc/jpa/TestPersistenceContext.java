@@ -9,17 +9,20 @@ import java.util.GregorianCalendar;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import es.alten.adc.jpa.entity.Gender;
 import es.alten.adc.jpa.entity.Student;
 
-public class TestPersistenceContext {
-	
+/**
+ * Tests the persistance context and checks basic functionality
+ * @author jaime.alvarez
+ *
+ */
+public class TestPersistenceContext extends BaseTest{
+
 	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-training-test");
 	
 	private EntityManager entityManager;
@@ -57,10 +60,5 @@ public class TestPersistenceContext {
 		final Student foundStudent = entityManager.find(Student.class, student.getId());
 		assertNotNull("Student not found", foundStudent);
 		assertEquals("Found student not equals to original", student, foundStudent);
-	}
-	
-	@After
-	public void tearDown() {
-		entityManager.close();
 	}
 }
