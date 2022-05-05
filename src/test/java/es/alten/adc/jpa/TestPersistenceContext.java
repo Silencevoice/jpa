@@ -23,6 +23,7 @@ import es.alten.adc.jpa.entity.Student;
  */
 public class TestPersistenceContext extends BaseTest{
 
+
 	@Before
 	public void setup() {
 		entityManager = emf.createEntityManager();
