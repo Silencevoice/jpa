@@ -24,7 +24,7 @@ import es.alten.adc.jpa.entity.Student;
 public class TestPersistenceContext extends BaseTest{
 
 	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-training-test");
-	
+
 	private EntityManager entityManager;
 
 	@Before
