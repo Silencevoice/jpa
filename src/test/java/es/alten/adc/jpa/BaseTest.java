@@ -15,7 +15,7 @@ import org.junit.Before;
  */
 public class BaseTest {
 
-	protected EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-training");
+	protected EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-training-test");
 	
 	protected EntityManager entityManager;
 
