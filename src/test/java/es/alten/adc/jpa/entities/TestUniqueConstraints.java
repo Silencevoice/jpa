@@ -2,11 +2,14 @@ package es.alten.adc.jpa.entities;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.util.List;
+
 import javax.persistence.PersistenceException;
 import javax.persistence.RollbackException;
 
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.Matcher;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -69,22 +72,27 @@ public class TestUniqueConstraints extends BaseTest{
 		pn1.setName("Carlos");
 		pn1.setName("Cernuda");
 		p3.setPersonName(pn3);
-		p3.setPersonNumber(2L);
+		p3.setPersonNumber(3L);
 		p3.setSecurityNumber(REPEATED_SECURITY);
 		p3.setDepartmentCode(REPEATED_DEPARTMENT);
 		
 		p4.setActive(true);
-		p4.setDepartmentCode("DEPCODE");
 		p4.setEmail(REPEATED_EMAIL);
 		final PersonName pn4 = new PersonName();
 		pn1.setName("Daniela");
 		pn1.setName("Desantos");
 		p4.setPersonName(pn4);
-		p4.setPersonNumber(3L);
+		p4.setPersonNumber(4L);
 		p4.setSecurityNumber(REPEATED_SECURITY);
 		p4.setDepartmentCode(REPEATED_DEPARTMENT);
+		
+		// Remove all persons
+		final List<Person> persons = entityManager.createQuery("from Person p").getResultList();
+		entityManager.getTransaction().begin();
+		persons.forEach(p -> entityManager.remove(p));
+		entityManager.getTransaction().commit();
 	}
-	
+		
 	@Test
 	public void givenTwoPersonsWithSameEmail_WhenPersist_ThenConstraintViolation() {
 		// Given two persons with the same email
@@ -103,6 +111,7 @@ public class TestUniqueConstraints extends BaseTest{
 	@Test
 	public void givenTwoPersonsWithSamePersonNumberAndStatus_WhenPersist_ThenConstraintViolation() {
 		// Given two persons with the same person number and status
+		p2.setPersonNumber(p3.getPersonNumber());
 		
 		// Then constraint violation
 		thrown.expect(RollbackException.class);
