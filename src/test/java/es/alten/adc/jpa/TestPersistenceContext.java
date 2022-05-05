@@ -6,6 +6,11 @@ import static org.junit.Assert.assertNotNull;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.Before;
 import org.junit.Test;
 
 import es.alten.adc.jpa.entity.Gender;
@@ -17,7 +22,16 @@ import es.alten.adc.jpa.entity.Student;
  *
  */
 public class TestPersistenceContext extends BaseTest{
+
+	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-training-test");
 	
+	private EntityManager entityManager;
+
+	@Before
+	public void setup() {
+		entityManager = emf.createEntityManager();
+	}
+
 	@Test
 	public void givenEntityManagerFactory_whenCreateEntityManager_thenNotNull() {
 		
