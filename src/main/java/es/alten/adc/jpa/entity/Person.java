@@ -13,7 +13,7 @@ import es.alten.adc.jpa.converter.PersonNameConverter;
 import lombok.Data;
 
 @Data
-@Entity(name = "personTable")
+@Entity
 // Unique multicolumn constraints
 @Table(uniqueConstraints = {
 		@UniqueConstraint(name = "UniqueNumberAndStatus",  columnNames = {"personNumber", "active"}), 
